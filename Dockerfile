@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   avrdude \
   build-essential \
   cmake \
+  fontconfig \
   git \
   haproxy \
   imagemagick \
