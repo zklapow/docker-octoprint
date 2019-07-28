@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   git \
   haproxy \
   imagemagick \
-  libav-tools \
+  ffmpeg \
   v4l-utils \
   libjpeg-dev \
   libjpeg62-turbo \
@@ -27,7 +27,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   supervisor \
   unzip \
   wget \
-  zlib1g-dev
+  zlib1g-dev \
+  libpng-dev \
+  libfreetype6-dev \
+  pkg-config && \
+  apt-get clean && \
+  rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Download packages
 RUN wget -qO- https://github.com/foosel/OctoPrint/archive/${version}.tar.gz | tar xz
